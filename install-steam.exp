@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+spawn apt-get install -y steamcmd
+expect "I AGREE"
+send -- "2\r"
+expect eof
+
+lassign [wait] pid spawnid os_error_flag value
+
+if {$os_error_flag == 0} {
+    puts "Steam installed"
+} else {
+    puts "Steam installation failed"
+}

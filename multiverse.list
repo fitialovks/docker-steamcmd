@@ -1,0 +1,6 @@
+deb http://archive.ubuntu.com/ubuntu/ xenial multiverse
+# deb-src http://archive.ubuntu.com/ubuntu/ xenial multiverse
+deb http://archive.ubuntu.com/ubuntu/ xenial-updates multiverse
+# deb-src http://archive.ubuntu.com/ubuntu/ xenial-updates multiverse
+
+
