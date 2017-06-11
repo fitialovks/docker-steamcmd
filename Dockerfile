@@ -18,14 +18,16 @@ RUN apt-get install -y --no-install-recommends expect
 
 RUN useradd --create-home steam
 WORKDIR /home/steam
-RUN su steam
+USER steam
 
 COPY install-steam.exp ./
 COPY start.sh ./
 COPY steamcmd.sh ./
 
+USER root
 RUN ./install-steam.exp
 
+USER steam
 RUN ./steamcmd.sh +login anonymous +quit
 
 CMD ["/bin/bash"]
